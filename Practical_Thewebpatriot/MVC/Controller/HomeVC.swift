@@ -50,5 +50,22 @@ extension HomeVC : UITableViewDataSource,UITableViewDelegate {
         self.navigationController?.pushViewController(anextController, animated: true)
     }
     
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+           
+           //Bottom Refresh
+           if scrollView == self.tblViewOrderList{
+               let currentOffset = scrollView.contentOffset.y
+               let maxOffset = scrollView.contentSize.height - scrollView.frame.size.height
+               if (maxOffset - currentOffset <= 30.0)
+               {
+                //API call
+//                   if self.totalRecord != 0 && self.totalRecord != self.arrOrderList?.count {
+//                       pageNo += 1
+//                       OrderListAPI()
+//                   }
+               }
+           }
+       }
+    
     
 }
