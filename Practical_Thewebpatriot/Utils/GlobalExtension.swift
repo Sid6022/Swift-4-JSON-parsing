@@ -177,7 +177,7 @@ extension UIView {
 extension NSMutableAttributedString {
     @discardableResult func bold(_ text: String) -> NSMutableAttributedString {
         let attrs : [NSAttributedString.Key : Any] = [
-            .font : UIFont(name: AppFont.openSansSemiBold, size: 20.0)!]
+            .font : UIFont(name: "", size: 20.0)!]
         let boldString = NSMutableAttributedString(string:text, attributes: attrs)
         append(boldString)
         return self
@@ -462,7 +462,7 @@ extension UITextField{
         imageView.image = imageName
         let templateImage = imageView.image?.withRenderingMode(.alwaysTemplate)
         imageView.image = templateImage
-        imageView.tintColor = AppColors.loginLblColor
+        imageView.tintColor = UIColor.red
         imageView.contentMode = .scaleAspectFit
         View.addSubview(imageView)
         if Direction.Left == direction{

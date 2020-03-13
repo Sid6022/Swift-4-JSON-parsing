@@ -12,10 +12,12 @@ class DetailsVC: UIViewController {
 
     @IBOutlet weak var tblDetails: UITableView!
     var arrNyData = [myData]()
-    
+    var Api : String?
+    var strTitle : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = strTitle
         parseJSON()
     }
     
@@ -23,8 +25,10 @@ class DetailsVC: UIViewController {
 
     //MARK:- API call
     func parseJSON() {
-        let url = URL(string: API.emailed)
+        showLoader("")
+        let url = URL(string: Api ?? "")
         let task = URLSession.shared.dataTask(with: url!) {(data, response, error) in
+            hideLoader()
             guard error == nil else {
                 print("returning error")
                 return }
@@ -57,10 +61,27 @@ extension DetailsVC : UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let aCell = tableView.dequeueReusableCell(withIdentifier: "DetailsCell", for: indexPath)
+         aCell.textLabel?.numberOfLines = 0
+        aCell.textLabel?.lineBreakMode = .byWordWrapping
         aCell.textLabel?.text = arrNyData[indexPath.row].title
         aCell.detailTextLabel?.text = arrNyData[indexPath.row].published_date
         return aCell
     }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let anextController = self.storyboard?.instantiateViewController(withIdentifier: "ContentVC") as! ContentVC
+        anextController.strUrl = arrNyData[indexPath.row].url
+        self.navigationController?.pushViewController(anextController, animated: true)
+        
+        
+    }
+    
+    
+    
+    
+    
     
 }
 
@@ -73,4 +94,5 @@ struct aJsonData : Codable {
 struct myData : Codable {
     let title : String?
     let published_date : String?
+    let url : String?
 }

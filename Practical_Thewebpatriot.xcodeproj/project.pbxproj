@@ -18,6 +18,7 @@
 		1B8841732416708200FFDC50 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8841722416708200FFDC50 /* Utils.swift */; };
 		1B884176241670FC00FFDC50 /* GlobalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B884174241670FB00FFDC50 /* GlobalExtension.swift */; };
 		1B884177241670FC00FFDC50 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B884175241670FC00FFDC50 /* Validation.swift */; };
+		1BFDC180241B79E100EB9E63 /* ContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFDC17F241B79E100EB9E63 /* ContentVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		1B8841722416708200FFDC50 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		1B884174241670FB00FFDC50 /* GlobalExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalExtension.swift; sourceTree = "<group>"; };
 		1B884175241670FC00FFDC50 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		1BFDC17F241B79E100EB9E63 /* ContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				1B006816232FAFA6009AE260 /* HomeVC.swift */,
 				1B0748BA233257C0002233DB /* DetailsVC.swift */,
 				1B69404E23421FE100AB3CD9 /* AutoHeightVC.swift */,
+				1BFDC17F241B79E100EB9E63 /* ContentVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				1B0748BB233257C0002233DB /* DetailsVC.swift in Sources */,
 				1B006817232FAFA6009AE260 /* HomeVC.swift in Sources */,
 				1B69404F23421FE100AB3CD9 /* AutoHeightVC.swift in Sources */,
+				1BFDC180241B79E100EB9E63 /* ContentVC.swift in Sources */,
 				1B006815232FAFA6009AE260 /* AppDelegate.swift in Sources */,
 				1B884177241670FC00FFDC50 /* Validation.swift in Sources */,
 				1B8841732416708200FFDC50 /* Utils.swift in Sources */,

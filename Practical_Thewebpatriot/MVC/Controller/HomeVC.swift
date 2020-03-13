@@ -15,6 +15,7 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         arrHomeData = [["Search Article"],["Most Viewd","Most Shared","Most Emailed"]]
+        
     }
     
 }
@@ -46,11 +47,18 @@ extension HomeVC : UITableViewDataSource,UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let anextController = self.storyboard?.instantiateViewController(withIdentifier: "DetailsVC") as! DetailsVC
-        self.navigationController?.pushViewController(anextController, animated: true)
+        let arrAPIs = [API.emailed,API.viewed,API.shared]
+        if indexPath.section == 0{
+            //Mover to search result
+        }else{
+            let anextController = self.storyboard?.instantiateViewController(withIdentifier: "DetailsVC") as! DetailsVC
+            anextController.Api = arrAPIs[indexPath.row]
+            anextController.strTitle = arrHomeData[indexPath.section][indexPath.row]
+            self.navigationController?.pushViewController(anextController, animated: true)
+        }
     }
     
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+   /* func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
            
            //Bottom Refresh
            if scrollView == self.tblViewOrderList{
@@ -65,7 +73,7 @@ extension HomeVC : UITableViewDataSource,UITableViewDelegate {
 //                   }
                }
            }
-       }
+       }*/
     
     
 }

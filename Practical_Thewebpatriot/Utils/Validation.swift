@@ -432,7 +432,7 @@ extension String
     func charactersBetween(max : Int,min : Int)-> Bool
         {
             let passTrim = trim
-            if passTrim.count <= Limit.maximumPassWordLimit && passTrim.count >= Limit.minimumPasswordLimit
+            if passTrim.count <= 10 && passTrim.count >= 6
             {
                 return true
             }
